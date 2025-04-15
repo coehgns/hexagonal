@@ -9,7 +9,7 @@ class BoardJpaEntity(
     val id: Long? = null,
 
     @Column(name = "title", nullable = false)
-    val title: String,
+    var title: String,
 
     @Column(name = "content")
     val content: String? = null
