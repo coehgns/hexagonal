@@ -12,5 +12,5 @@ class BoardJpaEntity(
     var title: String,
 
     @Column(name = "content")
-    val content: String? = null
+    var content: String? = null
 )
