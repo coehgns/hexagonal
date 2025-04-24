@@ -1,4 +1,4 @@
-package com.example.boardinfrastructure.domain.board.entiry
+package com.example.boardinfrastructure.domain.board.domain.entiry
 
 import jakarta.persistence.*
 
