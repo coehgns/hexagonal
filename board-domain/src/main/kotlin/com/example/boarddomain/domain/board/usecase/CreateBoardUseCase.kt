@@ -2,7 +2,7 @@ package com.example.boarddomain.domain.board.usecase
 
 import com.example.boarddomain.domain.board.spi.CreateBoardPort
 import com.example.boarddomain.domain.board.usecase.dto.request.CreateBoardRequest
-import com.example.boarddomain.domain.model.Board
+import com.example.boarddomain.domain.board.model.Board
 import com.example.boarddomain.global.annotation.UseCase
 
 @UseCase
