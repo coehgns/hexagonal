@@ -30,4 +30,14 @@ class CreateBoardService(
         return board
     }
 
+    override fun findAllBoard(): List<Board> {
+        val boards = findBoard.findAll()
+
+        return boards.map {
+            Board(
+                title = it.title,
+                content = it.content
+            )
+        }
+    }
 }
