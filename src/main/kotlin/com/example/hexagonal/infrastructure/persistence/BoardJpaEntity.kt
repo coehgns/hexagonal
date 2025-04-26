@@ -7,7 +7,7 @@ import java.util.*
 
 @Entity(name = "tbl_board")
 class BoardJpaEntity(
-    id: UUID,
+    id: UUID?,
 
     @Column(name = "title", nullable = false)
     var title: String,
