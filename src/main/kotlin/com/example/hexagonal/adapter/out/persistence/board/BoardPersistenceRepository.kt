@@ -18,6 +18,8 @@ class BoardPersistenceRepository(
     }
 
     override fun findById(boardId: UUID): Board? {
-        boardJpaRepository.findByIdOrNull(boardId)?.let { boardMapper.toModel(it) }
+        return boardJpaRepository.findByIdOrNull(boardId)?.let { boardMapper.toModel(it) }
     }
+
+    override fun findAll(): List<Board> = boardJpaRepository.findAll().map { boardMapper.toModel(it) }
 }
