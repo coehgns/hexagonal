@@ -22,4 +22,6 @@ class BoardWebAdapter(
     @GetMapping("/{boardId}")
     fun findBoard(@PathVariable("boardId") boardId: UUID): Board = boardUseCase.findBoard(boardId)
 
+    @GetMapping
+    fun findAllBoard(): List<Board> = boardUseCase.findAllBoard()
 }
