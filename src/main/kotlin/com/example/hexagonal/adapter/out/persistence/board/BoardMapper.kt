@@ -7,4 +7,5 @@ import org.mapstruct.Mapper
 @Mapper(componentModel = "spring")
 interface BoardMapper {
     fun toEntity(board: Board): BoardJpaEntity
+    fun toModel(entity: BoardJpaEntity): Board
 }
