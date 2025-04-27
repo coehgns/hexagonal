@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class BoardPersistenceRepository(
+class BoardPersistenceAdapter(
     private val boardJpaRepository: BoardJpaRepository,
     private val boardMapper: BoardMapper,
 ) : SaveBoardPort, FindBoardPort {
