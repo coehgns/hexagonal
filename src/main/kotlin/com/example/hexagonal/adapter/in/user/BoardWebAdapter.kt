@@ -4,14 +4,8 @@ import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
 import com.example.hexagonal.adapter.`in`.user.dto.request.ModifyBoardRequest
 import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.BoardUseCase
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PatchMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
@@ -19,6 +13,7 @@ import java.util.*
 class BoardWebAdapter(
     private val boardUseCase: BoardUseCase
 ) {
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     fun createBoard(@RequestBody request: CreateBoardRequest) = boardUseCase.createBoard(request)
 
