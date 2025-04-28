@@ -1,4 +1,4 @@
-package com.example.hexagonal.infrastructure.persistence
+package com.example.hexagonal.infrastructure.persistence.board
 
 import com.example.hexagonal.domain.BaseUUIDEntity
 import jakarta.persistence.Column
