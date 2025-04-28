@@ -1,6 +1,7 @@
 package com.example.hexagonal.adapter.`in`.user
 
 import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
+import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.BoardUseCase
 import com.example.hexagonal.domain.board.model.Board
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,8 +21,8 @@ class BoardWebAdapter(
     fun createBoard(@RequestBody request: CreateBoardRequest) = boardUseCase.createBoard(request)
 
     @GetMapping("/{boardId}")
-    fun findBoard(@PathVariable("boardId") boardId: UUID): Board = boardUseCase.findBoard(boardId)
+    fun findBoard(@PathVariable("boardId") boardId: UUID): GetBoardResponse = boardUseCase.findBoard(boardId)
 
     @GetMapping
-    fun findAllBoard(): List<Board> = boardUseCase.findAllBoard()
+    fun findAllBoard(): List<GetBoardResponse> = boardUseCase.findAllBoard()
 }
