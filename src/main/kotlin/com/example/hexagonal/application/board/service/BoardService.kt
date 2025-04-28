@@ -24,6 +24,7 @@ class BoardService(
         boardPort.saveBoard(board)
     }
 
+    @Transactional(readOnly = true)
     override fun findBoard(boardId: UUID): GetBoardResponse {
         val board = boardPort.findById(boardId)
             ?: throw IllegalArgumentException("board not found.")
@@ -35,6 +36,7 @@ class BoardService(
         )
     }
 
+    @Transactional(readOnly = true)
     override fun findAllBoard(): List<GetBoardResponse> {
         val boards = boardPort.findAll()
 
