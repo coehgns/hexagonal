@@ -29,6 +29,7 @@ subprojects {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.security:spring-security-config")
     implementation("org.springframework.boot:spring-boot-starter-validation")
