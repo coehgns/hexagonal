@@ -1,9 +1,11 @@
 package com.example.hexagonal.adapter.`in`.user
 
 import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
+import com.example.hexagonal.adapter.`in`.user.dto.request.ModifyBoardRequest
 import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.BoardUseCase
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -24,4 +26,10 @@ class BoardWebAdapter(
 
     @GetMapping
     fun findAllBoard(): List<GetBoardResponse> = boardUseCase.findAllBoard()
+
+    @PatchMapping("/{boardId}")
+    fun modifyBoard(
+        @PathVariable("boardId") boardId: UUID,
+        @RequestBody request: ModifyBoardRequest
+    ) = boardUseCase.modifyBoard(boardId, request)
 }
