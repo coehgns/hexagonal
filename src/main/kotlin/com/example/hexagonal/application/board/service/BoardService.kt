@@ -1,6 +1,7 @@
 package com.example.hexagonal.application.board.service
 
 import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
+import com.example.hexagonal.adapter.`in`.user.dto.request.ModifyBoardRequest
 import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.BoardUseCase
 import com.example.hexagonal.application.board.port.out.FindBoardPort
@@ -12,7 +13,7 @@ import java.util.*
 @Service
 class BoardService(
     private val saveBoardPort: SaveBoardPort,
-    private val findBoard: FindBoardPort
+    private val findBoardPort: FindBoardPort
 ): BoardUseCase {
     override fun createBoard(request: CreateBoardRequest) {
         val board = request.run {
@@ -25,7 +26,7 @@ class BoardService(
     }
 
     override fun findBoard(boardId: UUID): GetBoardResponse {
-        val board = findBoard.findById(boardId)
+        val board = findBoardPort.findById(boardId)
             ?: throw IllegalArgumentException("board not found.")
 
         return GetBoardResponse(
@@ -36,7 +37,7 @@ class BoardService(
     }
 
     override fun findAllBoard(): List<GetBoardResponse> {
-        val boards = findBoard.findAll()
+        val boards = findBoardPort.findAll()
 
         return boards.map {
             GetBoardResponse(
