@@ -1,4 +1,4 @@
-package com.example.hexagonal.global.security.jwt
+package com.example.hexagonal.infrastructure.env.jwt
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 
