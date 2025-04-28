@@ -1,14 +1,15 @@
 package com.example.hexagonal.global.security.auth
 
+import com.example.hexagonal.domain.user.model.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 class AuthDetails(
-    private val userName: String
+    private val user: User
 ) : UserDetails {
     override fun getAuthorities(): Collection<GrantedAuthority> {
-        return listOf<SimpleGrantedAuthority>(SimpleGrantedAuthority(userName))
+        return listOf<SimpleGrantedAuthority>(SimpleGrantedAuthority(user.userName))
     }
 
     override fun getPassword(): String? {
@@ -16,7 +17,7 @@ class AuthDetails(
     }
 
     override fun getUsername(): String {
-        return userName
+        return user.userName
     }
 
     override fun isAccountNonExpired(): Boolean {
