@@ -1,6 +1,6 @@
 package com.example.hexagonal.domain.board.model
 
-import com.example.hexagonal.adapter.`in`.user.dto.request.ModifyBoardRequest
+import com.example.hexagonal.adapter.`in`.board.dto.request.ModifyBoardRequest
 import java.util.*
 
 data class Board(

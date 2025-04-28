@@ -1,4 +1,4 @@
-package com.example.hexagonal.adapter.`in`.user.dto.response
+package com.example.hexagonal.adapter.`in`.board.dto.response
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package com.example.hexagonal.adapter.`in`.user.dto.request
+package com.example.hexagonal.adapter.`in`.board.dto.request
 
 class CreateBoardRequest(
     val title: String,

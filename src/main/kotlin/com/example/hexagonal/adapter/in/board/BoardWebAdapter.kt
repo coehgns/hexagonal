@@ -1,8 +1,8 @@
-package com.example.hexagonal.adapter.`in`.user
+package com.example.hexagonal.adapter.`in`.board
 
-import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
-import com.example.hexagonal.adapter.`in`.user.dto.request.ModifyBoardRequest
-import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
+import com.example.hexagonal.adapter.`in`.board.dto.request.CreateBoardRequest
+import com.example.hexagonal.adapter.`in`.board.dto.request.ModifyBoardRequest
+import com.example.hexagonal.adapter.`in`.board.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.*
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*

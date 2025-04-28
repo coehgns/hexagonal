@@ -1,6 +1,6 @@
 package com.example.hexagonal.application.board.service
 
-import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
+import com.example.hexagonal.adapter.`in`.board.dto.request.CreateBoardRequest
 import com.example.hexagonal.application.board.port.`in`.CreateBoardUseCase
 import com.example.hexagonal.application.board.port.out.BoardPort
 import com.example.hexagonal.domain.board.model.Board
