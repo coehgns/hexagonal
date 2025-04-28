@@ -22,10 +22,10 @@ class BoardWebAdapter(
     fun createBoard(@RequestBody request: CreateBoardRequest) = createBoardUseCase.createBoard(request)
 
     @GetMapping("/{boardId}")
-    fun findBoard(@PathVariable("boardId") boardId: UUID): GetBoardResponse = getBoardUseCase.getBoard(boardId)
+    fun getBoard(@PathVariable("boardId") boardId: UUID): GetBoardResponse = getBoardUseCase.getBoard(boardId)
 
     @GetMapping
-    fun findAllBoard(): List<GetBoardResponse> = getBoardListUseCase.getBoardList()
+    fun getBoardList(): List<GetBoardResponse> = getBoardListUseCase.getBoardList()
 
     @PatchMapping("/{boardId}")
     fun modifyBoard(
