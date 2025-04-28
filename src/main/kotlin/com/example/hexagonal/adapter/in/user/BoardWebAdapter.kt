@@ -4,6 +4,7 @@ import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
 import com.example.hexagonal.adapter.`in`.user.dto.request.ModifyBoardRequest
 import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.BoardUseCase
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -32,4 +33,7 @@ class BoardWebAdapter(
         @PathVariable("boardId") boardId: UUID,
         @RequestBody request: ModifyBoardRequest
     ) = boardUseCase.modifyBoard(boardId, request)
+
+    @DeleteMapping("/{boardId}")
+    fun deleteBoard(@PathVariable("boardId") boardId: UUID) = boardUseCase.deleteBoard(boardId)
 }
