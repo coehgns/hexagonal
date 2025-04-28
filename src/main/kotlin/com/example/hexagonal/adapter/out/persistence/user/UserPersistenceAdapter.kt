@@ -19,4 +19,8 @@ class UserPersistenceAdapter(
     override fun existsByUserName(userName: String): Boolean {
         return userJpaRepository.existsByUserName(userName)
     }
+
+    override fun saveUser(user: User) {
+        userJpaRepository.save(userMapper.toEntity(user))
+    }
 }
