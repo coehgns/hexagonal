@@ -1,6 +1,7 @@
 package com.example.hexagonal.application.board.service
 
 import com.example.hexagonal.adapter.`in`.user.dto.request.CreateBoardRequest
+import com.example.hexagonal.adapter.`in`.user.dto.response.GetBoardResponse
 import com.example.hexagonal.application.board.port.`in`.BoardUseCase
 import com.example.hexagonal.application.board.port.out.FindBoardPort
 import com.example.hexagonal.application.board.port.out.SaveBoardPort
@@ -23,18 +24,23 @@ class BoardService(
         saveBoardPort.saveBoard(board)
     }
 
-    override fun findBoard(boardId: UUID): Board {
+    override fun findBoard(boardId: UUID): GetBoardResponse {
         val board = findBoard.findById(boardId)
             ?: throw IllegalArgumentException("board not found.")
 
-        return board
+        return GetBoardResponse(
+            boardId = board.id!!,
+            title = board.title,
+            content = board.content
+        )
     }
 
-    override fun findAllBoard(): List<Board> {
+    override fun findAllBoard(): List<GetBoardResponse> {
         val boards = findBoard.findAll()
 
         return boards.map {
-            Board(
+            GetBoardResponse(
+                boardId = it.id!!,
                 title = it.title,
                 content = it.content
             )
