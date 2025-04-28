@@ -15,4 +15,8 @@ class UserPersistenceAdapter(
     override fun findById(userId: UUID): User? {
         return userJpaRepository.findByIdOrNull(userId)?.let { userMapper.toModel(it) }
     }
+
+    override fun existsByUserName(userName: String): Boolean {
+        return userJpaRepository.existsByUserName(userName)
+    }
 }
