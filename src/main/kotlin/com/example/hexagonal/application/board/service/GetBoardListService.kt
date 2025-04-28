@@ -13,7 +13,6 @@ class GetBoardListService(
     @Transactional(readOnly = true)
     override fun getBoardList(): List<GetBoardResponse> {
         val boards = boardPort.findAll()
-
         return boards.map {
             GetBoardResponse(
                 boardId = it.id!!,
