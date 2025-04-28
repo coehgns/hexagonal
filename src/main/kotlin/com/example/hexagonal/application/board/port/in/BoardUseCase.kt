@@ -9,5 +9,5 @@ interface BoardUseCase {
     fun createBoard(request: CreateBoardRequest)
     fun findBoard(boardId: UUID): GetBoardResponse
     fun findAllBoard(): List<GetBoardResponse>
-    fun modifyBoard(request: ModifyBoardRequest)
+    fun modifyBoard(boardId: UUID, request: ModifyBoardRequest)
 }
