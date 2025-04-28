@@ -14,3 +14,14 @@ spring:
         format_sql: ${JPA_FORMAT_SQL}
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
+
+redis:
+  host: ${REDIS_HOST:localhost}
+  port: ${REDIS_PORT:6379}
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  access-expired-exp: ${JWT_ACCESS_EXP:7200000}
+  refresh-expired-exp: ${JWT_REFRESH_EXP:604800000}
+  header: ${JWT_HEADER:Authorization}
+  prefix: ${JWT_PREFIX:Bearer }
