@@ -4,5 +4,6 @@ enum class ErrorCode(
     val status: Int,
     val message: String
 ) {
-    BOARD_NOT_FOUND(404, "Board Not Found.")
+    BOARD_NOT_FOUND(404, "Board Not Found."),
+    USER_NOT_FOUND(404, "User Not Found.")
 }
