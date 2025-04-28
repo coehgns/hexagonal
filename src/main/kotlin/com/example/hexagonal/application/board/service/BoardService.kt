@@ -8,6 +8,7 @@ import com.example.hexagonal.application.board.port.out.FindBoardPort
 import com.example.hexagonal.application.board.port.out.SaveBoardPort
 import com.example.hexagonal.domain.board.model.Board
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
 @Service
@@ -46,5 +47,13 @@ class BoardService(
                 content = it.content
             )
         }
+    }
+
+    @Transactional
+    override fun modifyBoard(boardId: UUID, request: ModifyBoardRequest) {
+        val board = findBoardPort.findById(boardId)
+            ?: throw IllegalArgumentException("board not found.")
+
+        saveBoardPort.saveBoard(board.modifyBoard(request))
     }
 }
