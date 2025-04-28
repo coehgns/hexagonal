@@ -8,11 +8,11 @@ import java.util.*
 @Entity(name = "tbl_user")
 class UserJpaEntity(
     id: UUID?,
-    name: String,
+    userName: String,
     password: String
 ) : BaseUUIDEntity(id) {
     @Column(name = "name", nullable = false)
-    var name: String = name
+    var userName: String = userName
         protected set
 
     @Column(name = "password", nullable = false)
