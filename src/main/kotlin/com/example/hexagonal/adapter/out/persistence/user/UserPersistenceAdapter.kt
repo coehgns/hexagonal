@@ -23,4 +23,8 @@ class UserPersistenceAdapter(
     override fun saveUser(user: User) {
         userJpaRepository.save(userMapper.toEntity(user))
     }
+
+    override fun findByUserName(userName: String): User? {
+        return userJpaRepository.findByUserName(userName)?.let { userMapper.toModel(it) }
+    }
 }
