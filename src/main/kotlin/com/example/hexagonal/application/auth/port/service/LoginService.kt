@@ -20,7 +20,7 @@ class LoginService(
         val user = userPort.findByUserName(request.userName) ?: throw UserNotFoundException
         val tokens = jwtProvider.generateTokens(request.userName)
 
-        if (passwordEncoder.matches(request.password, user.password)) {
+        if (passwordEncoder.matches(user.password, request.password)) {
             throw PasswordMismatchException
         }
 
