@@ -27,7 +27,7 @@ class BoardWebAdapter(
     @GetMapping
     fun getBoardList(): List<GetBoardResponse> = getBoardListUseCase.getBoardList()
 
-    @PatchMapping("/{boardId}")
+    @PutMapping("/{boardId}")
     fun modifyBoard(
         @PathVariable("boardId") boardId: UUID,
         @RequestBody request: ModifyBoardRequest
