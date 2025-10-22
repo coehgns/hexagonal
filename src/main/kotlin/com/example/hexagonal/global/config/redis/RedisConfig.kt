@@ -1,6 +1,6 @@
 package com.example.hexagonal.global.config.redis
 
-import com.example.hexagonal.infrastructure.env.redis.RedisProperties
+import com.example.hexagonal.global.env.redis.RedisProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.redis.connection.RedisConnectionFactory

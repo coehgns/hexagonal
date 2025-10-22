@@ -3,8 +3,8 @@ package com.example.hexagonal.application.auth.port.service
 import com.example.hexagonal.adapter.`in`.auth.dto.request.LoginRequest
 import com.example.hexagonal.application.auth.port.`in`.LoginUseCase
 import com.example.hexagonal.application.user.port.out.UserPort
-import com.example.hexagonal.domain.user.exception.PasswordMismatchException
-import com.example.hexagonal.domain.user.exception.UserNotFoundException
+import com.example.hexagonal.application.user.exception.PasswordMismatchException
+import com.example.hexagonal.application.user.exception.UserNotFoundException
 import com.example.hexagonal.global.security.jwt.JwtProvider
 import com.example.hexagonal.global.security.jwt.dto.TokenResponse
 import org.springframework.security.crypto.password.PasswordEncoder

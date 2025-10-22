@@ -1,6 +1,6 @@
-package com.example.hexagonal.domain.user.exception
+package com.example.hexagonal.application.user.exception
 
 import com.example.hexagonal.global.error.exception.CustomException
 import com.example.hexagonal.global.error.exception.ErrorCode
 
-object PasswordMismatchException : CustomException(ErrorCode.PASSWORD_MISMATCH)
+object UserNotFoundException : CustomException(ErrorCode.USER_NOT_FOUND)

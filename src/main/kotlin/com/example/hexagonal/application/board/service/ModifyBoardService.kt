@@ -3,7 +3,7 @@ package com.example.hexagonal.application.board.service
 import com.example.hexagonal.adapter.`in`.board.dto.request.ModifyBoardRequest
 import com.example.hexagonal.application.board.port.`in`.ModifyBoardUseCase
 import com.example.hexagonal.application.board.port.out.BoardPort
-import com.example.hexagonal.domain.board.exception.BoardNotFoundException
+import com.example.hexagonal.application.board.exception.BoardNotFoundException
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.util.*

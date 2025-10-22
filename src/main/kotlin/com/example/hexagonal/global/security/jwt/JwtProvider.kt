@@ -4,7 +4,7 @@ import com.example.hexagonal.global.security.auth.AuthDetailsService
 import com.example.hexagonal.global.security.jwt.dto.TokenResponse
 import com.example.hexagonal.global.security.jwt.entity.RefreshToken
 import com.example.hexagonal.global.security.jwt.entity.repository.RefreshTokenRepository
-import com.example.hexagonal.infrastructure.env.jwt.JwtProperties
+import com.example.hexagonal.global.env.JwtProperties
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import io.jsonwebtoken.security.Keys

@@ -1,4 +1,4 @@
-package com.example.hexagonal.infrastructure.env.redis
+package com.example.hexagonal.global.env.redis
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

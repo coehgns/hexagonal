@@ -1,9 +1,9 @@
-package com.example.hexagonal.infrastructure.persistence.board
+package com.example.hexagonal.adapter.out.entity.board
 
-import com.example.hexagonal.domain.BaseUUIDEntity
+import com.example.hexagonal.global.entity.BaseUUIDEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
-import java.util.*
+import java.util.UUID
 
 @Entity(name = "tbl_board")
 class BoardJpaEntity(

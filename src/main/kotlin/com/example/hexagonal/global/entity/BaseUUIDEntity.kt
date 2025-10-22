@@ -1,4 +1,4 @@
-package com.example.hexagonal.domain
+package com.example.hexagonal.global.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.GeneratedValue

@@ -1,7 +1,7 @@
 package com.example.hexagonal.global.security.auth
 
 import com.example.hexagonal.application.user.port.out.UserPort
-import com.example.hexagonal.domain.user.exception.UserNotFoundException
+import com.example.hexagonal.application.user.exception.UserNotFoundException
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.stereotype.Component
