@@ -13,13 +13,13 @@ COPY build.gradle.kts    build.gradle.kts
 RUN chmod +x gradlew
 
 # 의존성만 미리 받기 (소스 없이) -> 캐시층 형성
-RUN ./gradlew dependencies --no-daemon
+RUN ./gradlew --no-daemon dependencies || true
 
 # 나머지 소스 복사
 COPY . .
 
 # Spring Boot 실행 JAR 생성 (test 스킵 권장)
-RUN ./gradlew clean bootJar -x test
+RUN ./gradlew --no-daemon clean bootJar -x test
 
 # ---------- 2단계: 실행 ----------
 FROM openjdk:17-jdk-alpine
