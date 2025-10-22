@@ -19,7 +19,7 @@ RUN ./gradlew --no-daemon dependencies || true
 COPY . .
 
 # Spring Boot 실행 JAR 생성 (test 스킵 권장)
-RUN ./gradlew --no-daemon clean bootJar -x test
+RUN ./gradlew build --no-daemon -x test
 
 # ---------- 2단계: 실행 ----------
 FROM openjdk:17-jdk-alpine
