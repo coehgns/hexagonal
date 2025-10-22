@@ -1,6 +1,6 @@
 # ---------- 1단계: 빌드 ----------
 FROM gradle:8.10.2-jdk17-alpine AS build
-WORKDIR /app
+WORKDIR /home/gradle/app
 
 # 프로젝트 고정 파일들만 먼저 복사해서 의존성 캐시 극대화
 COPY gradlew ./
@@ -30,7 +30,7 @@ ENV TZ=Asia/Seoul
 
 # 빌드 산출물 복사 (bootJar 산출물 1개 가정)
 # build/libs 안의 *-SNAPSHOT.jar 또는 버전 jar를 app.jar로 통일
-COPY --from=build /app/build/libs/*.jar app.jar
+COPY --from=build /home/gradle/app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
