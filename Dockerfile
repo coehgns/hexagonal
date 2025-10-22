@@ -7,9 +7,7 @@ COPY gradlew ./
 COPY gradle ./gradle
 # Gradle Kotlin DSL / Groovy DSL 둘 다 대응
 COPY settings.gradle.kts settings.gradle.kts
-COPY settings.gradle     settings.gradle
 COPY build.gradle.kts    build.gradle.kts
-COPY build.gradle        build.gradle
 
 # 권한 부여 (일부 환경에서 필요)
 RUN chmod +x gradlew
