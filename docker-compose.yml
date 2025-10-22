@@ -2,8 +2,10 @@ version: "3.8"
 
 services:
   spring-app:
-    build: .
-    container_name: know-law
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hexagonal-prac
     ports:
       - "8080:8080"
     depends_on:
