@@ -1,5 +1,5 @@
 # ---------- 1단계: 빌드 ----------
-FROM gradle:8.10.2-jdk17-alpine AS build
+FROM gradle:8.5.0-jdk17-alpine AS build
 WORKDIR /app
 
 # 프로젝트 고정 파일들만 먼저 복사해서 의존성 캐시 극대화
