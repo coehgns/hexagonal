@@ -13,7 +13,7 @@ COPY build.gradle.kts    build.gradle.kts
 RUN chmod +x gradlew
 
 # 의존성만 미리 받기 (소스 없이) -> 캐시층 형성
-RUN ./gradlew --no-daemon dependencies || true
+RUN ./gradlew dependencies --no-daemon
 
 # 나머지 소스 복사
 COPY . .
@@ -30,8 +30,7 @@ ENV TZ=Asia/Seoul
 
 # 빌드 산출물 복사 (bootJar 산출물 1개 가정)
 # build/libs 안의 *-SNAPSHOT.jar 또는 버전 jar를 app.jar로 통일
-COPY --from=build /app/build/libs/*-all.jar /app/app.jar 2>/dev/null || \
-    COPY --from=build /app/build/libs/*.jar /app/app.jar
+COPY --from=build /app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
