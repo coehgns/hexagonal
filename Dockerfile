@@ -22,15 +22,11 @@ COPY . .
 RUN ./gradlew --no-daemon clean bootJar -x test
 
 # ---------- 2단계: 실행 ----------
-FROM eclipse-temurin:17-jre-alpine
+FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # 타임존/로캘(선택)
 ENV TZ=Asia/Seoul
-
-# 보안상 비루트 사용자
-RUN addgroup -S spring && adduser -S spring -G spring
-USER spring:spring
 
 # 빌드 산출물 복사 (bootJar 산출물 1개 가정)
 # build/libs 안의 *-SNAPSHOT.jar 또는 버전 jar를 app.jar로 통일
@@ -40,4 +36,4 @@ COPY --from=build /app/build/libs/*-all.jar /app/app.jar 2>/dev/null || \
 EXPOSE 8080
 
 # 실행
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
