@@ -71,5 +71,10 @@ tasks.bootJar {
 }
 
 tasks.jar {
+    enabled = false
+}
+
+tasks.bootJar {
     enabled = true
+    archiveFileName.set("app.jar")
 }
