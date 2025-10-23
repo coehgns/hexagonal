@@ -25,3 +25,7 @@ jwt:
   refresh-exp: ${JWT_REFRESH_EXP:604800000}
   header: ${JWT_HEADER:Authorization}
   prefix: ${JWT_PREFIX:Bearer }
+
+server:
+  address: 0.0.0.0
+  port: 8080
