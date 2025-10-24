@@ -1,0 +1,32 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH (git pull + env + compose)
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            set -e
+            cd /hexagonal
+
+            echo "👉 Pulling latest code..."
+            git pull origin main
+
+            echo "👉 Building and restarting containers..."
+            sudo docker compose pull
+            sudo docker compose up --build -d
+
+            echo "✅ Deployment complete!"
